@@ -1,5 +1,4 @@
 import math
-import numpy
 class Solution(object):
     def kClosest(self, points, k):
         

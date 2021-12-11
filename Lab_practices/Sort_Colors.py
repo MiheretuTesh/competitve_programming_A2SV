@@ -1,5 +1,7 @@
 class Solution(object):
     def sortColors(self, nums):
+            
+        
         
         for i in range(0, len(nums)):
             min = i
@@ -7,9 +9,12 @@ class Solution(object):
                 if(nums[j]<nums[min]):
                     min = j
             nums[i], nums[min] = nums[min], nums[i]
+            
+        
         return nums
         """
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        
+soln = Solution()
+print(soln.sortColors([0,2,0,1,0]))
