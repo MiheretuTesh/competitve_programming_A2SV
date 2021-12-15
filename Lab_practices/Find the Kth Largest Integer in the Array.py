@@ -5,10 +5,10 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-
-        nums = nums.sort(key = lambda x: x)
-        return nums
-        # return nums.index()
+        lst =nums
+        lst.sort(key = lambda x: int(x), reverse=True)
+        
+        return lst[k-1]
             
 soln  = Solution()
 print(soln.kthLargestNumber(["3","6","7","10"], 4))
