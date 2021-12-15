@@ -1,20 +1,12 @@
-from itertools import permutations
-
-
 class Solution(object):
     def largestNumber(self, nums):
-        lst = self.permute(nums)
-        return max(lst)
-    def permute(self, s):
-        out = []
-
-        if len(s) == 1:
-            out = [s]
-        else:
-            for i,let in enumerate(s):
-                for perm in self.permute(s[:i]+s[i+1:]):
-                    out += [let+perm]
-        return out
-        
-soln = Solution()
-print(soln.largestNumber("123"))
+        s = len(nums)
+        for i in range(s-1):
+            for j in range(i+1, s):
+                if(self.compute(nums[i], nums[j])):
+                    nums[i], nums[j] = nums[j], nums[i]
+        return str(int("".join(map(str, nums))))
+    def compute(self, num1, num2):
+        num1 = str(num1)
+        num2 = str(num2)
+        return num1+num2<num2+num1
