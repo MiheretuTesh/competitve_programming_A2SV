@@ -12,8 +12,3 @@ class Solution:
                     result[index] = i - index
                 stack.append((temperatures[i], i))
         return result
-                    
-                    
-                    
-                
-                
